@@ -1,7 +1,9 @@
+"""
+This is a Python script that generates notification using google webhook.
+"""
+
 from json import dumps
-
 from httplib2 import Http
-
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
@@ -18,7 +20,5 @@ def main():
     )
     print(response)
 
-
 if __name__ == '__main__':
     main()
-
