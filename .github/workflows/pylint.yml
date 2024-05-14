@@ -26,6 +26,8 @@ jobs:
       - name: Install dependencies
         run: pip install pylint
 
+      - name: Install httplib2
+        run: pip install httplib2
+
       - name: Run Pylint
         run: pylint main.py
-
