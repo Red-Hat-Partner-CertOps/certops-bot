@@ -1,0 +1,33 @@
+name: JSON Lint
+
+on:
+  push:
+    paths:
+      - '**/*.py'  # Trigger on any Python file change
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install jsonlint
+        run: pip install jsonlint
+
+      - name: Run jsonlint on Python files
+        run: |
+          for file in $(git ls-files '*.py'); do
+            grep -q "json.loads(" "$file" && echo "$file contains JSON" || continue
+            echo "Checking JSON in $file"
+            json=$(grep -o '"[^"]\{1,\}": [^,}\{]*' "$file" | grep -vP '^\s*#')
+            echo "$json" | while read -r line; do
+              echo "$line" | jsonlint -q || { echo "Invalid JSON in $file"; exit 1; }
+            done
+          done
