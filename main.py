@@ -27,7 +27,7 @@ def main():
                                             "text": "Open Document",
                                             "onClick": {
                                                 "openLink": {
-                                                    "url": "https://docs.google.com/document/d/1sjHfSmm0_0DF0Ax7An4DDsqu0B0yjxDksPwuzMaVtMA/edit#heading=h.ny8eurgr6hhm"
+                                                    "url": "put your document url here"
                                                 }
                                             }
                                         }
@@ -37,7 +37,7 @@ def main():
                                             "text": "Join Google Meet",
                                             "onClick": {
                                                 "openLink": {
-                                                    "url": "https://meet.google.com/eqt-hzcy-hrm?authuser=0"
+                                                    "url": "put your meeting url here"
                                                 }
                                             }
                                         }
