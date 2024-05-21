@@ -1,4 +1,4 @@
-# Google Webhook Notification Generator
+# CertOps-Bot
 
 This Python script facilitates the generation of notifications using Google webhook for Hangouts Chat. It constructs a card with specified content and sends it to the designated Google Chat space URL.
 
